@@ -1,0 +1,38 @@
+{
+  "name": "@sugarcrm/maple-syrup",
+  "version": "2.0.2",
+  "description": "A design token implementation for Sugar products.",
+  "main": "index.js",
+  "repository": "git@github.com:sugarcrm/maple-syrup.git",
+  "author": "Scott King <scott.king@sugarcrm.com>",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build_legacy": "style-dictionary build --config ./config.js",
+    "build": "node build ./build.js",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "jest": {
+    "rootDir": "./",
+    "moduleNameMapper": {
+      "sugar-base.css": "<rootDir>/__mocks__/sugarBaseTheme.js",
+      "sugar-dark.css": "<rootDir>/__mocks__/sugarDarkTheme.js",
+      "sugar-light.css": "<rootDir>/__mocks__/sugarLightTheme.js"
+    },
+    "testPathIgnorePatterns": ["<rootDir>/node_modules/"],
+    "transform": {
+      ".+\\.(css)$": "<rootDir>/node_modules/jest-css-modules-transform"
+    }
+  },
+  "dependencies": {
+    "style-dictionary": "^3.9.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-css-modules-transform": "^4.4.2"
+  },
+  "resolutions": {
+    "wrap-ansi": "^7.0.0",
+    "string-width": "^4.2.3"
+  }
+}

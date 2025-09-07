@@ -1,0 +1,2280 @@
+/*--------------------------------
+
+SugarIcons icon font
+Generated using nucleoapp.com
+
+-------------------------------- */
+
+@font-face {
+  font-family: 'SugarIcons';
+  src: url('../fonts/SugarIcons.eot');
+  src: url('../fonts/SugarIcons.eot') format('embedded-opentype'),
+       url('../fonts/SugarIcons.woff2') format('woff2'),
+       url('../fonts/SugarIcons.woff') format('woff'),
+       url('../fonts/SugarIcons.ttf') format('truetype'),
+       url('../fonts/SugarIcons.svg') format('svg');
+}
+
+/* base class */
+.sicon {
+  display: inline-block;
+  font: normal normal normal 1em/1 'SugarIcons';
+  color: inherit;
+  flex-shrink: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* size examples - relative units */
+.sicon-sm {
+  font-size: 0.8em;
+}
+
+.sicon-lg {
+  font-size: 1.2em;
+}
+
+/* size examples - absolute units */
+.sicon-16 {
+  font-size: 16px;
+}
+
+.sicon-32 {
+  font-size: 32px;
+}
+
+/* rotate the icon infinitely */
+.sicon-is-spinning {
+  animation: sicon-spin 1s infinite linear;
+}
+
+@keyframes sicon-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* transform */
+.sicon-rotate-90 {
+  transform: rotate(90deg);
+}
+
+.sicon-rotate-180 {
+  transform: rotate(180deg);
+}
+
+.sicon-rotate-270 {
+  transform: rotate(270deg);
+}
+
+.sicon-flip-y {
+  transform: scaleY(-1);
+}
+
+.sicon-flip-x {
+  transform: scaleX(-1);
+}
+
+/* icons */
+.sicon-scheduler-lg::before {
+  content: "\ed9a";
+}
+
+.sicon-summation-xxl::before {
+  content: "\ed9b";
+}
+
+.sicon-pdf-file-xxl::before {
+  content: "\ed9c";
+}
+
+.sicon-automate-web-hooks-xl::before {
+  content: "\ed9d";
+}
+
+.sicon-thumbs-down-line-lg::before {
+  content: "\ed9e";
+}
+
+.sicon-bug-xl::before {
+  content: "\ed9f";
+}
+
+.sicon-smart-guide-activity-templates-xl::before {
+  content: "\eda0";
+}
+
+.sicon-summation-details-xxl::before {
+  content: "\eda1";
+}
+
+.sicon-rows-and-columns-xxl::before {
+  content: "\eda2";
+}
+
+.sicon-revenue-line-items-xl::before {
+  content: "\eda3";
+}
+
+.sicon-matrix-xxl::before {
+  content: "\eda4";
+}
+
+.sicon-csv-file-xxl::before {
+  content: "\eda5";
+}
+
+.sicon-warning-xl-32::before {
+  content: "\eda6";
+}
+
+.sicon-warning-circle-xl-32::before {
+  content: "\eda7";
+}
+
+.sicon-info-fill-xl-32::before {
+  content: "\eda8";
+}
+
+.sicon-check-circle-xl-32::before {
+  content: "\eda9";
+}
+
+.sicon-wizard-circle-xl::before {
+  content: "\edaa";
+}
+
+.sicon-wizard-circle-line-xl::before {
+  content: "\edab";
+}
+
+.sicon-web-activity-detail-xl::before {
+  content: "\edad";
+}
+
+.sicon-user-group-xl::before {
+  content: "\edae";
+}
+
+.sicon-user-group-3-xl::before {
+  content: "\edaf";
+}
+
+.sicon-task-xl::before {
+  content: "\edb0";
+}
+
+.sicon-targets-xl::before {
+  content: "\edb1";
+}
+
+.sicon-tablet-xl::before {
+  content: "\edb2";
+}
+
+.sicon-smart_guides-stages-xl::before {
+  content: "\edb3";
+}
+
+.sicon-smart-guides-xl::before {
+  content: "\edb4";
+}
+
+.sicon-smart-guide-templates-xl::before {
+  content: "\edb5";
+}
+
+.sicon-smart-guide-sugar_actions-xl::before {
+  content: "\edb6";
+}
+
+.sicon-smart-guide-stage-templates-xl::before {
+  content: "\edb7";
+}
+
+.sicon-settings-lg::before {
+  content: "\edb8";
+}
+
+.sicon-slicers-xl::before {
+  content: "\edb9";
+}
+
+.sicon-opportunity-xl::before {
+  content: "\edba";
+}
+
+.sicon-quotes-xl::before {
+  content: "\edbb";
+}
+
+.sicon-quoted-line-items-xl::before {
+  content: "\edbc";
+}
+
+.sicon-purchased-line-items-xl::before {
+  content: "\edbd";
+}
+
+.sicon-purchase-xl::before {
+  content: "\edbe";
+}
+
+.sicon-projects-xl::before {
+  content: "\edbf";
+}
+
+.sicon-project-tasks-xl::before {
+  content: "\edc0";
+}
+
+.sicon-phone-xl::before {
+  content: "\edc1";
+}
+
+.sicon-package-xl::before {
+  content: "\edc2";
+}
+
+.sicon-leads-xl::before {
+  content: "\edc3";
+}
+
+.sicon-note-xl::before {
+  content: "\edc4";
+}
+
+.sicon-mobile-xl::before {
+  content: "\edc5";
+}
+
+.sicon-messages-xl::before {
+  content: "\edc6";
+}
+
+.sicon-meetings-xl::before {
+  content: "\edc7";
+}
+
+.sicon-comment-xl::before {
+  content: "\edc8";
+}
+
+.sicon-landing-pages-xl::before {
+  content: "\edc9";
+}
+
+.sicon-knowledgebase-xl::before {
+  content: "\edca";
+}
+
+.sicon-kebab-xl::before {
+  content: "\edcb";
+}
+
+.sicon-insights-xl::before {
+  content: "\edcc";
+}
+
+.sicon-external-users-xl::before {
+  content: "\edcd";
+}
+
+.sicon-event-mgmt-xl::before {
+  content: "\edce";
+}
+
+.sicon-escalation-xl::before {
+  content: "\edcf";
+}
+
+.sicon-docusign-xl::before {
+  content: "\edd0";
+}
+
+.sicon-documents-xl::before {
+  content: "\edd1";
+}
+
+.sicon-document-templates-xl::before {
+  content: "\edd2";
+}
+
+.sicon-desktop-xl::before {
+  content: "\edd4";
+}
+
+.sicon-data-privacy-xl::before {
+  content: "\edd5";
+}
+
+.sicon-dashboard-xl::before {
+  content: "\edd6";
+}
+
+.sicon-dashboard-default-xl::before {
+  content: "\edd7";
+}
+
+.sicon-copy-xl::before {
+  content: "\edd8";
+}
+
+.sicon-contracts-xl::before {
+  content: "\edd9";
+}
+
+.sicon-contact-xl::before {
+  content: "\edda";
+}
+
+.sicon-dollar-lg::before {
+  content: "\eddb";
+}
+
+.sicon-comment-line-xl::before {
+  content: "\eddc";
+}
+
+.sicon-cloud-download-xl::before {
+  content: "\eddd";
+}
+
+.sicon-close-xl::before {
+  content: "\edde";
+}
+
+.sicon-chevron-left-xl::before {
+  content: "\eddf";
+}
+
+.sicon-catalog-xl::before {
+  content: "\ede0";
+}
+
+.sicon-cases-xl::before {
+  content: "\ede1";
+}
+
+.sicon-campaigns-xl::before {
+  content: "\ede2";
+}
+
+.sicon-thumbs-down-lg::before {
+  content: "\ede3";
+}
+
+.sicon-account-xl::before {
+  content: "\ede4";
+}
+
+.sicon-ai-xl::before {
+  content: "\ede5";
+}
+
+.sicon-activity-feed-xl::before {
+  content: "\ede6";
+}
+
+.sicon-lock::before {
+  content: "\ede7";
+}
+
+.sicon-yen-lg::before {
+  content: "\ede8";
+}
+
+.sicon-web-lg::before {
+  content: "\ede9";
+}
+
+.sicon-warning-line-lg::before {
+  content: "\edea";
+}
+
+.sicon-warning-circle-lg::before {
+  content: "\edec";
+}
+
+.sicon-user-lg::before {
+  content: "\eded";
+}
+
+.sicon-user-group-lg::before {
+  content: "\edee";
+}
+
+.sicon-upload-lg::before {
+  content: "\edef";
+}
+
+.sicon-undo-lg::before {
+  content: "\edf0";
+}
+
+.sicon-tracking-activity-lg::before {
+  content: "\edf2";
+}
+
+.sicon-thumbs-up-line-lg::before {
+  content: "\edf3";
+}
+
+.sicon-thumbs-up-lg::before {
+  content: "\edf4";
+}
+
+.sicon-role-mgmt::before {
+  content: "\edf5";
+}
+
+.sicon-theme-lg::before {
+  content: "\edf6";
+}
+
+.sicon-task-lg::before {
+  content: "\edf7";
+}
+
+.sicon-target-lists-lg::before {
+  content: "\edf8";
+}
+
+.sicon-target-lg::before {
+  content: "\edf9";
+}
+
+.sicon-target-email-lg::before {
+  content: "\edfa";
+}
+
+.sicon-tag-lg::before {
+  content: "\edfc";
+}
+
+.sicon-sync-off-lg::before {
+  content: "\edfd";
+}
+
+.sicon-sync-lg::before {
+  content: "\edfe";
+}
+
+.sicon-switch-name::before {
+  content: "\edff";
+}
+
+.sicon-sugar-predict-lg::before {
+  content: "\ee00";
+}
+
+.sicon-sugar-live-lg::before {
+  content: "\ee01";
+}
+
+.sicon-refresh-lg::before {
+  content: "\ee02";
+}
+
+.sicon-studio-lg::before {
+  content: "\ee03";
+}
+
+.sicon-star-outline-lg::before {
+  content: "\ee04";
+}
+
+.sicon-star-fill-lg::before {
+  content: "\ee05";
+}
+
+.sicon-slicers-lg::before {
+  content: "\ee06";
+}
+
+.sicon-shortcuts-lg::before {
+  content: "\ee07";
+}
+
+.sicon-share-lg::before {
+  content: "\ee08";
+}
+
+.sicon-reset-lg::before {
+  content: "\ee09";
+}
+
+.sicon-send-lg::before {
+  content: "\ee0a";
+}
+
+.sicon-search-lg::before {
+  content: "\ee0b";
+}
+
+.sicon-scoring-lg::before {
+  content: "\ee0c";
+}
+
+.sicon-purchased-line-items-lg::before {
+  content: "\ee0d";
+}
+
+.sicon-save-lg::before {
+  content: "\ee0e";
+}
+
+.sicon-role-mgmt-lg::before {
+  content: "\ee0f";
+}
+
+.sicon-right-paren-line-lg::before {
+  content: "\ee10";
+}
+
+.sicon-revenue-line-items-lg::before {
+  content: "\ee11";
+}
+
+.sicon-pound-lg::before {
+  content: "\ee12";
+}
+
+.sicon-chevron-left-lg::before {
+  content: "\ee13";
+}
+
+.sicon-redo-lg::before {
+  content: "\ee14";
+}
+
+.sicon-record-line-lg::before {
+  content: "\ee15";
+}
+
+.sicon-record-fill-lg::before {
+  content: "\ee16";
+}
+
+.sicon-quoted-line-items-lg::before {
+  content: "\ee17";
+}
+
+.sicon-quote-lg::before {
+  content: "\ee18";
+}
+
+.sicon-features-lg::before {
+  content: "\ee19";
+}
+
+.sicon-purchase-lg::before {
+  content: "\ee1a";
+}
+
+.sicon-projects-lg::before {
+  content: "\ee1b";
+}
+
+.sicon-processes-lg::before {
+  content: "\ee1c";
+}
+
+.sicon-process-email-templates-lg::before {
+  content: "\ee1d";
+}
+
+.sicon-process-definitions-lg::before {
+  content: "\ee1e";
+}
+
+.sicon-process-business-rules-lg::before {
+  content: "\ee1f";
+}
+
+.sicon-preview-lg::before {
+  content: "\ee20";
+}
+
+.sicon-info-fill-lg::before {
+  content: "\ee21";
+}
+
+.sicon-plus-lg::before {
+  content: "\ee22";
+}
+
+.sicon-pin-lg::before {
+  content: "\ee23";
+}
+
+.sicon-pin-fill-lg::before {
+  content: "\ee24";
+}
+
+.sicon-phone-lg::before {
+  content: "\ee25";
+}
+
+.sicon-pages-lg::before {
+  content: "\ee26";
+}
+
+.sicon-package-lg::before {
+  content: "\ee27";
+}
+
+.sicon-opportunity-lg::before {
+  content: "\ee28";
+}
+
+.sicon-note-lg::before {
+  content: "\ee29";
+}
+
+.sicon-multiply-line-lg::before {
+  content: "\ee2a";
+}
+
+.sicon-mobile-lg::before {
+  content: "\ee2c";
+}
+
+.sicon-message-lg::before {
+  content: "\ee2d";
+}
+
+.sicon-meetings-lg::before {
+  content: "\ee2e";
+}
+
+.sicon-marketplace-lg::before {
+  content: "\ee2f";
+}
+
+.sicon-logout-lg::before {
+  content: "\ee30";
+}
+
+.sicon-login-lockout-lg::before {
+  content: "\ee31";
+}
+
+.sicon-list-lg::before {
+  content: "\ee33";
+}
+
+.sicon-left-paren-line-lg::before {
+  content: "\ee34";
+}
+
+.sicon-lead-lg::before {
+  content: "\ee35";
+}
+
+.sicon-launch-lg::before {
+  content: "\ee37";
+}
+
+.sicon-knowledgebase-lg::before {
+  content: "\ee38";
+}
+
+.sicon-kebab-lg::before {
+  content: "\ee39";
+}
+
+.sicon-invalid-circle-lg::before {
+  content: "\ee3a";
+}
+
+.sicon-insights-lg::before {
+  content: "\ee3b";
+}
+
+.sicon-events-lg::before {
+  content: "\ee3c";
+}
+
+.sicon-info-circle-lg::before {
+  content: "\ee3d";
+}
+
+.sicon-home-lg::before {
+  content: "\ee3e";
+}
+
+.sicon-hide-lg::before {
+  content: "\ee3f";
+}
+
+.sicon-hamburger-lg::before {
+  content: "\ee41";
+}
+
+.sicon-grid-lg::before {
+  content: "\ee42";
+}
+
+.sicon-format-lg::before {
+  content: "\ee43";
+}
+
+.sicon-flag-lg::before {
+  content: "\ee45";
+}
+
+.sicon-filter-lg::before {
+  content: "\ee46";
+}
+
+.sicon-trophy::before {
+  content: "\ee47";
+}
+
+.sicon-external-authentication-lg::before {
+  content: "\ee48";
+}
+
+.sicon-expand-lg::before {
+  content: "\ee49";
+}
+
+.sicon-exchange-lg::before {
+  content: "\ee4a";
+}
+
+.sicon-entries-lg::before {
+  content: "\ee4b";
+}
+
+.sicon-euro-lg::before {
+  content: "\ee4c";
+}
+
+.sicon-escalation-lg::before {
+  content: "\ee4d";
+}
+
+.sicon-error-lg::before {
+  content: "\ee4e";
+}
+
+.sicon-sugar-club-bw::before {
+  content: "\ee4f";
+}
+
+.sicon-email-lg::before {
+  content: "\ee50";
+}
+
+.sicon-download-lg::before {
+  content: "\ee52";
+}
+
+.sicon-contact-lg::before {
+  content: "\ee53";
+}
+
+.sicon-dollar-bill-lg::before {
+  content: "\ee54";
+}
+
+.sicon-document-lg::before {
+  content: "\ee55";
+}
+
+.sicon-divide-line-lg::before {
+  content: "\ee56";
+}
+
+.sicon-default-module-lg::before {
+  content: "\ee57";
+}
+
+.sicon-database-lg::before {
+  content: "\ee58";
+}
+
+.sicon-data-privacy-lg::before {
+  content: "\ee59";
+}
+
+.sicon-dashboard-line-lg::before {
+  content: "\ee5a";
+}
+
+.sicon-dashboard-lg::before {
+  content: "\ee5b";
+}
+
+.sicon-dashboard-fill-lg::before {
+  content: "\ee5c";
+}
+
+.sicon-customer-journey-stages-lg::before {
+  content: "\ee5d";
+}
+
+.sicon-customer-journey-lg::before {
+  content: "\ee5e";
+}
+
+.sicon-customer-journey::before {
+  content: "\ee5f";
+}
+
+.sicon-credit-card-lg::before {
+  content: "\ee60";
+}
+
+.sicon-copy-lg::before {
+  content: "\ee61";
+}
+
+.sicon-contracts-lg::before {
+  content: "\ee62";
+}
+
+.sicon-archive-lg::before {
+  content: "\ee63";
+}
+
+.sicon-comment-lg::before {
+  content: "\ee64";
+}
+
+.sicon-collapse-lg::before {
+  content: "\ee65";
+}
+
+.sicon-close-lg::before {
+  content: "\ee66";
+}
+
+.sicon-chevron-up-lg::before {
+  content: "\ee67";
+}
+
+.sicon-chevron-right-lg::before {
+  content: "\ee68";
+}
+
+.sicon-chevron-down-lg::before {
+  content: "\ee6a";
+}
+
+.sicon-check-lg::before {
+  content: "\ee6b";
+}
+
+.sicon-check-circle-line-lg::before {
+  content: "\ee6c";
+}
+
+.sicon-check-circle-lg::before {
+  content: "\ee6d";
+}
+
+.sicon-cents-lg::before {
+  content: "\ee6e";
+}
+
+.sicon-case-lg::before {
+  content: "\ee6f";
+}
+
+.sicon-campaigns-lg::before {
+  content: "\ee70";
+}
+
+.sicon-calendar-lg::before {
+  content: "\ee71";
+}
+
+.sicon-bitcoin-lg::before {
+  content: "\ee73";
+}
+
+.sicon-bell-lg-line::before {
+  content: "\ee74";
+}
+
+.sicon-arrow-right-lg::before {
+  content: "\ee76";
+}
+
+.sicon-tracker::before {
+  content: "\ee77";
+}
+
+.sicon-archive-box-lg::before {
+  content: "\ee78";
+}
+
+.sicon-analytics-lg::before {
+  content: "\ee79";
+}
+
+.sicon-add-target::before {
+  content: "\ee7a";
+}
+
+.sicon-add-line-lg::before {
+  content: "\ee7b";
+}
+
+.sicon-add-dashlet-lg::before {
+  content: "\ee7c";
+}
+
+.sicon-add-circle-lg::before {
+  content: "\ee7d";
+}
+
+.sicon-account-lg::before {
+  content: "\ee7e";
+}
+
+.sicon-workflow::before {
+  content: "\ee7f";
+}
+
+.sicon-web-logic::before {
+  content: "\ee80";
+}
+
+.sicon-warning-triangle::before {
+  content: "\ee81";
+}
+
+.sicon-warning-circle::before {
+  content: "\ee82";
+}
+
+.sicon-vertical-split::before {
+  content: "\ee83";
+}
+
+.sicon-user::before {
+  content: "\ee85";
+}
+
+.sicon-user-sm::before {
+  content: "\ee86";
+}
+
+.sicon-user-group::before {
+  content: "\ee87";
+}
+
+.sicon-upload::before {
+  content: "\ee88";
+}
+
+.sicon-hide::before {
+  content: "\ee8a";
+}
+
+.sicon-unlock::before {
+  content: "\ee8b";
+}
+
+.sicon-unlink::before {
+  content: "\ee8c";
+}
+
+.sicon-twitter::before {
+  content: "\ee8d";
+}
+
+.sicon-tag::before {
+  content: "\ee8e";
+}
+
+.sicon-trash::before {
+  content: "\ee8f";
+}
+
+.sicon-star-fill::before {
+  content: "\ee90";
+}
+
+.sicon-timeline::before {
+  content: "\ee91";
+}
+
+.sicon-tile-view-grid::before {
+  content: "\ee93";
+}
+
+.sicon-thumbs-up::before {
+  content: "\ee94";
+}
+
+.sicon-thumbs-down::before {
+  content: "\ee95";
+}
+
+.sicon-text-formatting::before {
+  content: "\ee96";
+}
+
+.sicon-team-perm::before {
+  content: "\ee97";
+}
+
+.sicon-team-mgmt::before {
+  content: "\ee98";
+}
+
+.sicon-string::before {
+  content: "\ee9a";
+}
+
+.sicon-swap::before {
+  content: "\ee9b";
+}
+
+.sicon-sugar-u::before {
+  content: "\ee9c";
+}
+
+.sicon-sugar-predict::before {
+  content: "\ee9d";
+}
+
+.sicon-email-queue::before {
+  content: "\ee9e";
+}
+
+.sicon-studio::before {
+  content: "\ee9f";
+}
+
+.sicon-save::before {
+  content: "\eea0";
+}
+
+.sicon-star-outline::before {
+  content: "\eea1";
+}
+
+.sicon-shippers::before {
+  content: "\eea2";
+}
+
+.sicon-stacked::before {
+  content: "\eea3";
+}
+
+.sicon-sidebyside::before {
+  content: "\eea4";
+}
+
+.sicon-reply-all::before {
+  content: "\eea5";
+}
+
+.sicon-settings::before {
+  content: "\eea6";
+}
+
+.sicon-search-small::before {
+  content: "\eea7";
+}
+
+.sicon-scheduler::before {
+  content: "\eea8";
+}
+
+.sicon-launch::before {
+  content: "\eea9";
+}
+
+.sicon-route::before {
+  content: "\eeaa";
+}
+
+.sicon-portal::before {
+  content: "\eeab";
+}
+
+.sicon-reset::before {
+  content: "\eeac";
+}
+
+.sicon-reports::before {
+  content: "\eead";
+}
+
+.sicon-message::before {
+  content: "\eeae";
+}
+
+.sicon-repair::before {
+  content: "\eeaf";
+}
+
+.sicon-remove::before {
+  content: "\eeb0";
+}
+
+.sicon-relate-fields::before {
+  content: "\eeb1";
+}
+
+.sicon-refresh::before {
+  content: "\eeb2";
+}
+
+.sicon-redo::before {
+  content: "\eeb3";
+}
+
+.sicon-quotes::before {
+  content: "\eeb4";
+}
+
+.sicon-product-types::before {
+  content: "\eeb5";
+}
+
+.sicon-preview::before {
+  content: "\eeb6";
+}
+
+.sicon-package::before {
+  content: "\eeb7";
+}
+
+.sicon-plus::before {
+  content: "\eeb9";
+}
+
+.sicon-plus-sm::before {
+  content: "\eeba";
+}
+
+.sicon-play::before {
+  content: "\eebb";
+}
+
+.sicon-phone::before {
+  content: "\eebc";
+}
+
+.sicon-pdf-manager::before {
+  content: "\eebd";
+}
+
+.sicon-password-mgmt::before {
+  content: "\eebe";
+}
+
+.sicon-parallel::before {
+  content: "\eebf";
+}
+
+.sicon-oauth-key::before {
+  content: "\eec2";
+}
+
+.sicon-number::before {
+  content: "\eec3";
+}
+
+.sicon-note::before {
+  content: "\eec4";
+}
+
+.sicon-nodes::before {
+  content: "\eec5";
+}
+
+.sicon-module-loader::before {
+  content: "\eec6";
+}
+
+.sicon-module-builder::before {
+  content: "\eec7";
+}
+
+.sicon-mobile::before {
+  content: "\eec8";
+}
+
+.sicon-minus::before {
+  content: "\eec9";
+}
+
+.sicon-marketplace::before {
+  content: "\eeca";
+}
+
+.sicon-mask::before {
+  content: "\eecb";
+}
+
+.sicon-logout::before {
+  content: "\eecd";
+}
+
+.sicon-map-pin::before {
+  content: "\eece";
+}
+
+.sicon-manufacturers::before {
+  content: "\eecf";
+}
+
+.sicon-log-viewer::before {
+  content: "\eed0";
+}
+
+.sicon-list::before {
+  content: "\eed1";
+}
+
+.sicon-list-view::before {
+  content: "\eed2";
+}
+
+.sicon-link::before {
+  content: "\eed3";
+}
+
+.sicon-import::before {
+  content: "\eed4";
+}
+
+.sicon-languages::before {
+  content: "\eed5";
+}
+
+.sicon-lab::before {
+  content: "\eed6";
+}
+
+.sicon-kebab::before {
+  content: "\eed7";
+}
+
+.sicon-info::before {
+  content: "\eed8";
+}
+
+.sicon-inbox::before {
+  content: "\eed9";
+}
+
+.sicon-forecasts::before {
+  content: "\eeda";
+}
+
+.sicon-horizontal-split::before {
+  content: "\eedb";
+}
+
+.sicon-connectors::before {
+  content: "\eedc";
+}
+
+.sicon-help::before {
+  content: "\eedd";
+}
+
+.sicon-full-screen::before {
+  content: "\eede";
+}
+
+.sicon-full-screen-exit::before {
+  content: "\eedf";
+}
+
+.sicon-download::before {
+  content: "\eee0";
+}
+
+.sicon-folder::before {
+  content: "\eee1";
+}
+
+.sicon-expand-right::before {
+  content: "\eee2";
+}
+
+.sicon-folder-line::before {
+  content: "\eee3";
+}
+
+.sicon-focus-drawer::before {
+  content: "\eee4";
+}
+
+.sicon-filter::before {
+  content: "\eee5";
+}
+
+.sicon-file-upload::before {
+  content: "\eee6";
+}
+
+.sicon-facebook::before {
+  content: "\eee7";
+}
+
+.sicon-arrow-top-right::before {
+  content: "\eee8";
+}
+
+.sicon-expand-left::before {
+  content: "\eee9";
+}
+
+.sicon-exclusive::before {
+  content: "\eeea";
+}
+
+.sicon-equal::before {
+  content: "\eeeb";
+}
+
+.sicon-email::before {
+  content: "\eeec";
+}
+
+.sicon-dropdown-editor::before {
+  content: "\eeed";
+}
+
+.sicon-email-inbound::before {
+  content: "\eeee";
+}
+
+.sicon-email-contacts::before {
+  content: "\eeef";
+}
+
+.sicon-email-campaign::before {
+  content: "\eef0";
+}
+
+.sicon-email-archive::before {
+  content: "\eef1";
+}
+
+.sicon-edit::before {
+  content: "\eef2";
+}
+
+.sicon-contracts::before {
+  content: "\eef3";
+}
+
+.sicon-chevron-left::before {
+  content: "\eef4";
+}
+
+.sicon-document::before {
+  content: "\eef5";
+}
+
+.sicon-display-modules::before {
+  content: "\eef6";
+}
+
+.sicon-diagnostics::before {
+  content: "\eef7";
+}
+
+.sicon-data-table::before {
+  content: "\eef8";
+}
+
+.sicon-dashboard::before {
+  content: "\eef9";
+}
+
+.sicon-dashboard-default::before {
+  content: "\eefa";
+}
+
+.sicon-currencies::before {
+  content: "\eefb";
+}
+
+.sicon-copy::before {
+  content: "\eefc";
+}
+
+.sicon-arrow-right::before {
+  content: "\eefd";
+}
+
+.sicon-config-nav::before {
+  content: "\eeff";
+}
+
+.sicon-config-api::before {
+  content: "\ef00";
+}
+
+.sicon-cloud::before {
+  content: "\ef01";
+}
+
+.sicon-close::before {
+  content: "\ef02";
+}
+
+.sicon-clock::before {
+  content: "\ef03";
+}
+
+.sicon-chevron-up::before {
+  content: "\ef04";
+}
+
+.sicon-chevron-right::before {
+  content: "\ef05";
+}
+
+.sicon-arrow-up::before {
+  content: "\ef06";
+}
+
+.sicon-chevron-down::before {
+  content: "\ef07";
+}
+
+.sicon-check::before {
+  content: "\ef08";
+}
+
+.sicon-check-circle::before {
+  content: "\ef09";
+}
+
+.sicon-catalog::before {
+  content: "\ef0a";
+}
+
+.sicon-caret-up::before {
+  content: "\ef0b";
+}
+
+.sicon-caret-down::before {
+  content: "\ef0c";
+}
+
+.sicon-calendar::before {
+  content: "\ef0d";
+}
+
+.sicon-bug::before {
+  content: "\ef0e";
+}
+
+.sicon-ban::before {
+  content: "\ef0f";
+}
+
+.sicon-automate-stacked::before {
+  content: "\ef10";
+}
+
+.sicon-automate-scroll::before {
+  content: "\ef11";
+}
+
+.sicon-attach::before {
+  content: "\ef12";
+}
+
+.sicon-arrow-right-double::before {
+  content: "\ef13";
+}
+
+.sicon-arrow-left::before {
+  content: "\ef14";
+}
+
+.sicon-arrow-left-double::before {
+  content: "\ef15";
+}
+
+.sicon-arrow-down::before {
+  content: "\ef16";
+}
+
+.sicon-archive::before {
+  content: "\ef17";
+}
+
+.sicon-amazon::before {
+  content: "\ef18";
+}
+
+.sicon-ai::before {
+  content: "\ef19";
+}
+
+.sicon-add-folder::before {
+  content: "\ef1a";
+}
+
+.sicon-add-existing::before {
+  content: "\ef1b";
+}
+
+.sicon-activity::before {
+  content: "\ef1c";
+}
+
+.sicon-account::before {
+  content: "\ef1d";
+}
+
+.sicon-smart-phone-lg::before {
+  content: "\ef35";
+}
+
+.sicon-sugar-logo-16::before {
+  content: "\ef37";
+}
+
+.sicon-web-xl::before {
+  content: "\ef38";
+}
+
+.sicon-user-check-xl::before {
+  content: "\ef39";
+}
+
+.sicon-transactions-lg::before {
+  content: "\ef3b";
+}
+
+.sicon-sugar-logo-lg::before {
+  content: "\ef3c";
+}
+
+.sicon-sort-fields-xxl::before {
+  content: "\ef3d";
+}
+
+.sicon-checkbox-btn-checked-lg::before {
+  content: "\ef3e";
+}
+
+.sicon-bool::before {
+  content: "\ef3f";
+}
+
+.sicon-all-fields-xxl::before {
+  content: "\ef40";
+}
+
+.sicon-plug-lg::before {
+  content: "\ef41";
+}
+
+.sicon-image::before {
+  content: "\ef42";
+}
+
+.sicon-lock-lg::before {
+  content: "\ef43";
+}
+
+.sicon-document-line-lg::before {
+  content: "\ef44";
+}
+
+.sicon-dot-circle-o-lg::before {
+  content: "\ef45";
+}
+
+.sicon-format-color::before {
+  content: "\ef46";
+}
+
+.sicon-copy-calendar-link-xl::before {
+  content: "\ef47";
+}
+
+.sicon-cloud-download-lg::before {
+  content: "\ef48";
+}
+
+.sicon-clicks-lg::before {
+  content: "\ef49";
+}
+
+.sicon-checkbox-btn-lg::before {
+  content: "\ef4a";
+}
+
+.sicon-add-target-lg::before {
+  content: "\ef4b";
+}
+
+.sicon-bell-cross-lg::before {
+  content: "\ef4c";
+}
+
+.sicon-bell-lg::before {
+  content: "\ef4d";
+}
+
+.sicon-wand-lg::before {
+  content: "\ef4f";
+}
+
+.sicon-upgrade::before {
+  content: "\ef50";
+}
+
+.sicon-sugar-logo-12::before {
+  content: "\ef51";
+}
+
+.sicon-sugar-club::before {
+  content: "\ef52";
+}
+
+.sicon-search::before {
+  content: "\ef53";
+}
+
+.sicon-reply::before {
+  content: "\ef54";
+}
+
+.sicon-news-lg::before {
+  content: "\ef55";
+}
+
+.sicon-my-sites::before {
+  content: "\ef56";
+}
+
+.sicon-linkedin::before {
+  content: "\ef57";
+}
+
+.sicon-info-lg::before {
+  content: "\ef58";
+}
+
+.sicon-end-event::before {
+  content: "\ef59";
+}
+
+.sicon-ellipsis::before {
+  content: "\ef5a";
+}
+
+.sicon-arrow-up-circle-line::before {
+  content: "\ef5b";
+}
+
+.sicon-sugar-logo-24::before {
+  content: "\ef5d";
+}
+
+.sicon-organic-lg::before {
+  content: "\f13e";
+}
+
+.sicon-shield-lg::before {
+  content: "\f13f";
+}
+
+.sicon-window-lg::before {
+  content: "\f140";
+}
+
+.sicon-shuttle-lg::before {
+  content: "\f141";
+}
+
+.sicon-media-player-lg::before {
+  content: "\f142";
+}
+
+.sicon-world-lg::before {
+  content: "\f143";
+}
+
+.sicon-single-bed::before {
+  content: "\f144";
+}
+
+.sicon-windmill-lg::before {
+  content: "\f145";
+}
+
+.sicon-wifi-lg::before {
+  content: "\f146";
+}
+
+.sicon-wifi::before {
+  content: "\f147";
+}
+
+.sicon-weekly-lg::before {
+  content: "\f148";
+}
+
+.sicon-voice-recognition-lg::before {
+  content: "\f149";
+}
+
+.sicon-virus-lg::before {
+  content: "\f14a";
+}
+
+.sicon-video::before {
+  content: "\f14b";
+}
+
+.sicon-video-lg::before {
+  content: "\f14c";
+}
+
+.sicon-validate::before {
+  content: "\f14d";
+}
+
+.sicon-text::before {
+  content: "\f14e";
+}
+
+.sicon-user-check::before {
+  content: "\f14f";
+}
+
+.sicon-url::before {
+  content: "\f150";
+}
+
+.sicon-underline::before {
+  content: "\f151";
+}
+
+.sicon-tv-lg::before {
+  content: "\f152";
+}
+
+.sicon-trash-lg::before {
+  content: "\f153";
+}
+
+.sicon-trainer-lg::before {
+  content: "\f154";
+}
+
+.sicon-tiktok::before {
+  content: "\f155";
+}
+
+.sicon-questionnaire-lg::before {
+  content: "\f156";
+}
+
+.sicon-text-align-right::before {
+  content: "\f157";
+}
+
+.sicon-text-align-left::before {
+  content: "\f158";
+}
+
+.sicon-text-align-center::before {
+  content: "\f159";
+}
+
+.sicon-telescope-lg::before {
+  content: "\f15a";
+}
+
+.sicon-subtract-line-lg::before {
+  content: "\f15b";
+}
+
+.sicon-storage-lg::before {
+  content: "\f15c";
+}
+
+.sicon-statistics-lg::before {
+  content: "\f15d";
+}
+
+.sicon-stars_group::before {
+  content: "\f15e";
+}
+
+.sicon-stadium-lg::before {
+  content: "\f15f";
+}
+
+.sicon-spades-lg::before {
+  content: "\f160";
+}
+
+.sicon-soundwave-lg::before {
+  content: "\f161";
+}
+
+.sicon-skull-lg::before {
+  content: "\f162";
+}
+
+.sicon-send::before {
+  content: "\f163";
+}
+
+.sicon-martini-lg::before {
+  content: "\f164";
+}
+
+.sicon-machine-learning-lg::before {
+  content: "\f166";
+}
+
+.sicon-scissors-lg::before {
+  content: "\f167";
+}
+
+.sicon-resize-lg::before {
+  content: "\f168";
+}
+
+.sicon-remove-field::before {
+  content: "\f169";
+}
+
+.sicon-remove-field-hover::before {
+  content: "\f16a";
+}
+
+.sicon-relate::before {
+  content: "\f16b";
+}
+
+.sicon-radioenum::before {
+  content: "\f16c";
+}
+
+.sicon-presentation-lg::before {
+  content: "\f16d";
+}
+
+.sicon-privacy-lg::before {
+  content: "\f16e";
+}
+
+.sicon-playlist-lg::before {
+  content: "\f16f";
+}
+
+.sicon-plant-lg::before {
+  content: "\f170";
+}
+
+.sicon-planet-lg::before {
+  content: "\f171";
+}
+
+.sicon-forward::before {
+  content: "\f172";
+}
+
+.sicon-phonefill::before {
+  content: "\f173";
+}
+
+.sicon-parent::before {
+  content: "\f174";
+}
+
+.sicon-jacuzzi-lg::before {
+  content: "\f175";
+}
+
+.sicon-name::before {
+  content: "\f176";
+}
+
+.sicon-multienum::before {
+  content: "\f177";
+}
+
+.sicon-moon_crescent::before {
+  content: "\f178";
+}
+
+.sicon-medicine-lg::before {
+  content: "\f179";
+}
+
+.sicon-medical-clipboard-lg::before {
+  content: "\f17a";
+}
+
+.sicon-decimal::before {
+  content: "\f17b";
+}
+
+.sicon-logo-snapchat::before {
+  content: "\f17c";
+}
+
+.sicon-logo-instagram::before {
+  content: "\f17d";
+}
+
+.sicon-logo-linkedin::before {
+  content: "\f17e";
+}
+
+.sicon-logo-fb-simple::before {
+  content: "\f17f";
+}
+
+.sicon-layout-lg::before {
+  content: "\f181";
+}
+
+.sicon-laptop::before {
+  content: "\f182";
+}
+
+.sicon-gavel::before {
+  content: "\f183";
+}
+
+.sicon-int::before {
+  content: "\f185";
+}
+
+.sicon-iframe::before {
+  content: "\f186";
+}
+
+.sicon-html::before {
+  content: "\f187";
+}
+
+.sicon-help-lg::before {
+  content: "\f188";
+}
+
+.sicon-hearts-lg::before {
+  content: "\f189";
+}
+
+.sicon-graph-lg::before {
+  content: "\f18a";
+}
+
+.sicon-google-lg::before {
+  content: "\f18b";
+}
+
+.sicon-daily-lg::before {
+  content: "\f18d";
+}
+
+.sicon-font-size::before {
+  content: "\f18e";
+}
+
+.sicon-float::before {
+  content: "\f18f";
+}
+
+.sicon-fire-lg::before {
+  content: "\f190";
+}
+
+.sicon-fields::before {
+  content: "\f191";
+}
+
+.sicon-fan-lg::before {
+  content: "\f192";
+}
+
+.sicon-enum::before {
+  content: "\f193";
+}
+
+.sicon-entries::before {
+  content: "\f194";
+}
+
+.sicon-encrypt::before {
+  content: "\f195";
+}
+
+.sicon-edit-lg::before {
+  content: "\f196";
+}
+
+.sicon-door-lg::before {
+  content: "\f197";
+}
+
+.sicon-diamonds-lg::before {
+  content: "\f199";
+}
+
+.sicon-details-lg::before {
+  content: "\f19a";
+}
+
+.sicon-date::before {
+  content: "\f19b";
+}
+
+.sicon-decentralize-lg::before {
+  content: "\f19c";
+}
+
+.sicon-datetime::before {
+  content: "\f19d";
+}
+
+.sicon-video-player-lg::before {
+  content: "\f1fc";
+}
+
+.sicon-checkbox-btn-checked::before {
+  content: "\f1fd";
+}
+
+.sicon-clubs-lg::before {
+  content: "\f1fe";
+}
+
+.sicon-layout-xl::before {
+  content: "\f200";
+}
+
+.sicon-actionbutton::before {
+  content: "\f201";
+}
+
+.sicon-address::before {
+  content: "\f202";
+}
+
+.sicon-advanced-filter::before {
+  content: "\f203";
+}
+
+.sicon-lotus-lg::before {
+  content: "\f206";
+}
+
+.sicon-asterisk::before {
+  content: "\f20a";
+}
+
+.sicon-bed-lg::before {
+  content: "\f20c";
+}
+
+.sicon-bin-lg::before {
+  content: "\f20d";
+}
+
+.sicon-blockquote-lg::before {
+  content: "\f20e";
+}
+
+.sicon-bold::before {
+  content: "\f210";
+}
+
+.sicon-bool-lg::before {
+  content: "\f211";
+}
+
+.sicon-briefcase::before {
+  content: "\f212";
+}
+
+.sicon-car-front::before {
+  content: "\f213";
+}
+
+.sicon-casino-lg::before {
+  content: "\f214";
+}
+
+.sicon-checkbox-btn::before {
+  content: "\f215";
+}
+
+.sicon-clock-lg::before {
+  content: "\f216";
+}
+
+.sicon-cloud-insights::before {
+  content: "\f218";
+}
+
+.sicon-clouds::before {
+  content: "\f219";
+}
+
+.sicon-coffee-lg::before {
+  content: "\f21a";
+}
+
+.sicon-copy-meeting-xl::before {
+  content: "\f21c";
+}
+
+.sicon-currency::before {
+  content: "\f21d";
+}
+
+.sicon-datetimecombo::before {
+  content: "\f21e";
+}
+
+.sicon-edit-xl::before {
+  content: "\f220";
+}
+
+.sicon-subtract::before {
+  content: "\f223";
+}
+
+.sicon-sun_rays::before {
+  content: "\f224";
+}
+
+.sicon-varchar::before {
+  content: "\f225";
+}
+
+.sicon-trash-xl::before {
+  content: "\f226";
+}
+
+.sicon-italics::before {
+  content: "\f227";
+}
+
+.sicon-document-line::before {
+  content: "\f229";
+}
+
+.sicon-user-check-lg::before {
+  content: "\f22a";
+}
+
+.sicon-calculator-lg::before {
+  content: "\f22b";
+}
+
+.sicon-help-circle-lg::before {
+  content: "\f22c";
+}
+
+.sicon-data-privacy::before {
+  content: "\f22d";
+}
+
+.sicon-airplane::before {
+  content: "\f22e";
+}
+
+.sicon-login::before {
+  content: "\f22f";
+}
+
+.sicon-discover-xl::before {
+  content: "\f230";
+}
+
+.sicon-update::before {
+  content: "\f231";
+}
+
+.sicon-tile-view::before {
+  content: "\f232";
+}
+
+.sicon-tax-rates::before {
+  content: "\f233";
+}
+
+.sicon-reply-lg::before {
+  content: "\f234";
+}
+
+.sicon-money-bag-lg::before {
+  content: "\f235";
+}
+
+.sicon-autoincrement::before {
+  content: "\f236";
+}
+
+.sicon-mask-disabled::before {
+  content: "\f237";
+}
+
+.sicon-folder-open::before {
+  content: "\f238";
+}
+
+.sicon-blueprint-lg::before {
+  content: "\f239";
+}
+
+.sicon-forecasts-lg::before {
+  content: "\f23a";
+}
+
+.sicon-content-security::before {
+  content: "\f23b";
+}
+
+.sicon-content-delivery-lg::before {
+  content: "\f23d";
+}
+
+.sicon-cocktail-lg::before {
+  content: "\f23e";
+}
+
+.sicon-business-centers-lg::before {
+  content: "\f23f";
+}
+
+.sicon-airplane-lg::before {
+  content: "\f240";
+}
+
+.sicon-warning-lg::before {
+  content: "\f242";
+}
+
+.sicon-login-lg::before {
+  content: "\f243";
+}
+
+.sicon-opportunities::before {
+  content: "\f244";
+}

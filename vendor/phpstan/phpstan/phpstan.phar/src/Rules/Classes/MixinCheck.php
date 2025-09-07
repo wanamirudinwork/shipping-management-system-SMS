@@ -1,0 +1,142 @@
+<?php
+
+declare (strict_types=1);
+namespace PHPStan\Rules\Classes;
+
+use PhpParser\Node\Stmt\ClassLike;
+use PHPStan\Reflection\ClassReflection;
+use PHPStan\Reflection\ReflectionProvider;
+use PHPStan\Rules\ClassNameCheck;
+use PHPStan\Rules\ClassNameNodePair;
+use PHPStan\Rules\Generics\GenericObjectTypeCheck;
+use PHPStan\Rules\IdentifierRuleError;
+use PHPStan\Rules\MissingTypehintCheck;
+use PHPStan\Rules\PhpDoc\UnresolvableTypeHelper;
+use PHPStan\Rules\RuleErrorBuilder;
+use PHPStan\Type\VerbosityLevel;
+use function array_merge;
+use function sprintf;
+final class MixinCheck
+{
+    /**
+     * @var ReflectionProvider
+     */
+    private $reflectionProvider;
+    /**
+     * @var ClassNameCheck
+     */
+    private $classCheck;
+    /**
+     * @var GenericObjectTypeCheck
+     */
+    private $genericObjectTypeCheck;
+    /**
+     * @var MissingTypehintCheck
+     */
+    private $missingTypehintCheck;
+    /**
+     * @var UnresolvableTypeHelper
+     */
+    private $unresolvableTypeHelper;
+    /**
+     * @var bool
+     */
+    private $checkClassCaseSensitivity;
+    /**
+     * @var bool
+     */
+    private $absentTypeChecks;
+    /**
+     * @var bool
+     */
+    private $checkMissingTypehints;
+    public function __construct(ReflectionProvider $reflectionProvider, ClassNameCheck $classCheck, GenericObjectTypeCheck $genericObjectTypeCheck, MissingTypehintCheck $missingTypehintCheck, UnresolvableTypeHelper $unresolvableTypeHelper, bool $checkClassCaseSensitivity, bool $absentTypeChecks, bool $checkMissingTypehints)
+    {
+        $this->reflectionProvider = $reflectionProvider;
+        $this->classCheck = $classCheck;
+        $this->genericObjectTypeCheck = $genericObjectTypeCheck;
+        $this->missingTypehintCheck = $missingTypehintCheck;
+        $this->unresolvableTypeHelper = $unresolvableTypeHelper;
+        $this->checkClassCaseSensitivity = $checkClassCaseSensitivity;
+        $this->absentTypeChecks = $absentTypeChecks;
+        $this->checkMissingTypehints = $checkMissingTypehints;
+    }
+    /**
+     * @return list<IdentifierRuleError>
+     */
+    public function check(ClassReflection $classReflection, ClassLike $node) : array
+    {
+        $errors = [];
+        foreach ($this->checkInTraitDefinitionContext($classReflection) as $error) {
+            $errors[] = $error;
+        }
+        foreach ($this->checkInTraitUseContext($classReflection, $classReflection, $node) as $error) {
+            $errors[] = $error;
+        }
+        return $errors;
+    }
+    /**
+     * @return list<IdentifierRuleError>
+     */
+    public function checkInTraitDefinitionContext(ClassReflection $classReflection) : array
+    {
+        $errors = [];
+        foreach ($classReflection->getMixinTags() as $mixinTag) {
+            $type = $mixinTag->getType();
+            if (!$type->canCallMethods()->yes() || !$type->canAccessProperties()->yes()) {
+                $errors[] = RuleErrorBuilder::message(sprintf('PHPDoc tag @mixin contains non-object type %s.', $type->describe(VerbosityLevel::typeOnly())))->identifier('mixin.nonObject')->build();
+                continue;
+            }
+            if (!$this->absentTypeChecks) {
+                continue;
+            }
+            if (!$this->checkMissingTypehints) {
+                continue;
+            }
+            foreach ($this->missingTypehintCheck->getIterableTypesWithMissingValueTypehint($type) as $iterableType) {
+                $iterableTypeDescription = $iterableType->describe(VerbosityLevel::typeOnly());
+                $errors[] = RuleErrorBuilder::message(sprintf('%s %s has PHPDoc tag @mixin with no value type specified in iterable type %s.', $classReflection->getClassTypeDescription(), $classReflection->getDisplayName(), $iterableTypeDescription))->tip(MissingTypehintCheck::MISSING_ITERABLE_VALUE_TYPE_TIP)->identifier('missingType.iterableValue')->build();
+            }
+            foreach ($this->missingTypehintCheck->getNonGenericObjectTypesWithGenericClass($type) as [$innerName, $genericTypeNames]) {
+                $errors[] = RuleErrorBuilder::message(sprintf('PHPDoc tag @mixin contains generic %s but does not specify its types: %s', $innerName, $genericTypeNames))->identifier('missingType.generics')->build();
+            }
+            foreach ($this->missingTypehintCheck->getCallablesWithMissingSignature($type) as $callableType) {
+                $errors[] = RuleErrorBuilder::message(sprintf('%s %s has PHPDoc tag @mixin with no signature specified for %s.', $classReflection->getClassTypeDescription(), $classReflection->getDisplayName(), $callableType->describe(VerbosityLevel::typeOnly())))->identifier('missingType.callable')->build();
+            }
+        }
+        return $errors;
+    }
+    /**
+     * @return list<IdentifierRuleError>
+     */
+    public function checkInTraitUseContext(ClassReflection $reflection, ClassReflection $implementingClassReflection, ClassLike $node) : array
+    {
+        if ($reflection->getNativeReflection()->getName() === $implementingClassReflection->getName()) {
+            $phpDoc = $reflection->getResolvedPhpDoc();
+        } else {
+            $phpDoc = $reflection->getTraitContextResolvedPhpDoc($implementingClassReflection);
+        }
+        if ($phpDoc === null) {
+            return [];
+        }
+        $errors = [];
+        foreach ($phpDoc->getMixinTags() as $mixinTag) {
+            $type = $mixinTag->getType();
+            if ($this->unresolvableTypeHelper->containsUnresolvableType($type)) {
+                $errors[] = RuleErrorBuilder::message('PHPDoc tag @mixin contains unresolvable type.')->identifier('mixin.unresolvableType')->build();
+                continue;
+            }
+            $errors = array_merge($errors, $this->genericObjectTypeCheck->check($type, 'PHPDoc tag @mixin contains generic type %s but %s %s is not generic.', 'Generic type %s in PHPDoc tag @mixin does not specify all template types of %s %s: %s', 'Generic type %s in PHPDoc tag @mixin specifies %d template types, but %s %s supports only %d: %s', 'Type %s in generic type %s in PHPDoc tag @mixin is not subtype of template type %s of %s %s.', 'Call-site variance of %s in generic type %s in PHPDoc tag @mixin is in conflict with %s template type %s of %s %s.', 'Call-site variance of %s in generic type %s in PHPDoc tag @mixin is redundant, template type %s of %s %s has the same variance.'));
+            foreach ($type->getReferencedClasses() as $class) {
+                if (!$this->reflectionProvider->hasClass($class)) {
+                    $errors[] = RuleErrorBuilder::message(sprintf('PHPDoc tag @mixin contains unknown class %s.', $class))->identifier('class.notFound')->discoveringSymbolsTip()->build();
+                } elseif ($this->reflectionProvider->getClass($class)->isTrait()) {
+                    $errors[] = RuleErrorBuilder::message(sprintf('PHPDoc tag @mixin contains invalid type %s.', $class))->identifier('mixin.trait')->build();
+                } else {
+                    $errors = array_merge($errors, $this->classCheck->checkClassNames([new ClassNameNodePair($class, $node)], $this->checkClassCaseSensitivity));
+                }
+            }
+        }
+        return $errors;
+    }
+}

@@ -1,0 +1,35 @@
+<?php
+
+declare (strict_types=1);
+namespace PHPStan\Rules\Exceptions;
+
+use PhpParser\Node;
+use PHPStan\Analyser\Scope;
+use PHPStan\Php\PhpVersion;
+use PHPStan\Rules\Rule;
+use PHPStan\Rules\RuleErrorBuilder;
+/**
+ * @implements Rule<Node\Expr\Throw_>
+ */
+final class ThrowExpressionRule implements Rule
+{
+    /**
+     * @var PhpVersion
+     */
+    private $phpVersion;
+    public function __construct(PhpVersion $phpVersion)
+    {
+        $this->phpVersion = $phpVersion;
+    }
+    public function getNodeType() : string
+    {
+        return Node\Expr\Throw_::class;
+    }
+    public function processNode(Node $node, Scope $scope) : array
+    {
+        if ($this->phpVersion->supportsThrowExpression()) {
+            return [];
+        }
+        return [RuleErrorBuilder::message('Throw expression is supported only on PHP 8.0 and later.')->nonIgnorable()->identifier('throw.notSupported')->build()];
+    }
+}

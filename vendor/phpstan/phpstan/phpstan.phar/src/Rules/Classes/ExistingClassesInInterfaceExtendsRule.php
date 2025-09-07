@@ -1,0 +1,63 @@
+<?php
+
+declare (strict_types=1);
+namespace PHPStan\Rules\Classes;
+
+use PhpParser\Node;
+use PHPStan\Analyser\Scope;
+use PHPStan\Reflection\ReflectionProvider;
+use PHPStan\Rules\ClassNameCheck;
+use PHPStan\Rules\ClassNameNodePair;
+use PHPStan\Rules\Rule;
+use PHPStan\Rules\RuleErrorBuilder;
+use function array_map;
+use function sprintf;
+/**
+ * @implements Rule<Node\Stmt\Interface_>
+ */
+final class ExistingClassesInInterfaceExtendsRule implements Rule
+{
+    /**
+     * @var ClassNameCheck
+     */
+    private $classCheck;
+    /**
+     * @var ReflectionProvider
+     */
+    private $reflectionProvider;
+    public function __construct(ClassNameCheck $classCheck, ReflectionProvider $reflectionProvider)
+    {
+        $this->classCheck = $classCheck;
+        $this->reflectionProvider = $reflectionProvider;
+    }
+    public function getNodeType() : string
+    {
+        return Node\Stmt\Interface_::class;
+    }
+    public function processNode(Node $node, Scope $scope) : array
+    {
+        $messages = $this->classCheck->checkClassNames(array_map(static function (Node\Name $interfaceName) : ClassNameNodePair {
+            return new ClassNameNodePair((string) $interfaceName, $interfaceName);
+        }, $node->extends));
+        $currentInterfaceName = (string) $node->namespacedName;
+        foreach ($node->extends as $extends) {
+            $extendedInterfaceName = (string) $extends;
+            if (!$this->reflectionProvider->hasClass($extendedInterfaceName)) {
+                if (!$scope->isInClassExists($extendedInterfaceName)) {
+                    $messages[] = RuleErrorBuilder::message(sprintf('Interface %s extends unknown interface %s.', $currentInterfaceName, $extendedInterfaceName))->identifier('interface.notFound')->nonIgnorable()->discoveringSymbolsTip()->build();
+                }
+            } else {
+                $reflection = $this->reflectionProvider->getClass($extendedInterfaceName);
+                if ($reflection->isClass()) {
+                    $messages[] = RuleErrorBuilder::message(sprintf('Interface %s extends class %s.', $currentInterfaceName, $reflection->getDisplayName()))->identifier('interfaceExtends.class')->nonIgnorable()->build();
+                } elseif ($reflection->isTrait()) {
+                    $messages[] = RuleErrorBuilder::message(sprintf('Interface %s extends trait %s.', $currentInterfaceName, $reflection->getDisplayName()))->identifier('interfaceExtends.trait')->nonIgnorable()->build();
+                } elseif ($reflection->isEnum()) {
+                    $messages[] = RuleErrorBuilder::message(sprintf('Interface %s extends enum %s.', $currentInterfaceName, $reflection->getDisplayName()))->identifier('interfaceExtends.enum')->nonIgnorable()->build();
+                }
+            }
+            return $messages;
+        }
+        return $messages;
+    }
+}

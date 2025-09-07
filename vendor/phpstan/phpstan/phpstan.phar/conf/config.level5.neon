@@ -1,0 +1,70 @@
+includes:
+	- config.level4.neon
+
+parameters:
+	checkFunctionArgumentTypes: true
+	checkArgumentsPassedByReference: true
+
+conditionalTags:
+	PHPStan\Rules\Functions\ArrayFilterRule:
+		phpstan.rules.rule: %featureToggles.arrayFilter%
+
+	PHPStan\Rules\Functions\ArrayValuesRule:
+		phpstan.rules.rule: %featureToggles.arrayValues%
+
+	PHPStan\Rules\Functions\CallUserFuncRule:
+		phpstan.rules.rule: %featureToggles.callUserFunc%
+
+	PHPStan\Rules\Functions\ParameterCastableToStringRule:
+		phpstan.rules.rule: %featureToggles.checkParameterCastableToStringFunctions%
+
+	PHPStan\Rules\Functions\ImplodeParameterCastableToStringRule:
+		phpstan.rules.rule: %featureToggles.checkParameterCastableToStringFunctions%
+
+	PHPStan\Rules\Functions\SortParameterCastableToStringRule:
+		phpstan.rules.rule: %featureToggles.checkParameterCastableToStringFunctions%
+
+rules:
+	- PHPStan\Rules\DateTimeInstantiationRule
+
+services:
+	-
+		class: PHPStan\Rules\Functions\RandomIntParametersRule
+		arguments:
+			reportMaybes: %reportMaybes%
+
+		tags:
+			- phpstan.rules.rule
+
+	-
+		class: PHPStan\Rules\Functions\ArrayFilterRule
+		arguments:
+			treatPhpDocTypesAsCertain: %treatPhpDocTypesAsCertain%
+			treatPhpDocTypesAsCertainTip: %tips.treatPhpDocTypesAsCertain%
+
+	-
+		class: PHPStan\Rules\Functions\ArrayValuesRule
+		arguments:
+			treatPhpDocTypesAsCertain: %treatPhpDocTypesAsCertain%
+			treatPhpDocTypesAsCertainTip: %tips.treatPhpDocTypesAsCertain%
+
+	-
+		class: PHPStan\Rules\Functions\CallUserFuncRule
+
+	-
+		class: PHPStan\Rules\Functions\ImplodeFunctionRule
+		arguments:
+			disabled: %featureToggles.checkParameterCastableToStringFunctions%
+
+		tags:
+			- phpstan.rules.rule
+
+	-
+		class: PHPStan\Rules\Functions\ParameterCastableToStringRule
+
+	-
+		class: PHPStan\Rules\Functions\ImplodeParameterCastableToStringRule
+
+	-
+		class: PHPStan\Rules\Functions\SortParameterCastableToStringRule
+

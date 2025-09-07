@@ -1,0 +1,232 @@
+includes:
+	- config.level1.neon
+
+parameters:
+	checkClassCaseSensitivity: true
+	checkThisOnly: false
+	checkPhpDocMissingReturn: true
+
+rules:
+	- PHPStan\Rules\Cast\EchoRule
+	- PHPStan\Rules\Cast\InvalidCastRule
+	- PHPStan\Rules\Cast\InvalidPartOfEncapsedStringRule
+	- PHPStan\Rules\Cast\PrintRule
+	- PHPStan\Rules\Classes\AccessPrivateConstantThroughStaticRule
+	- PHPStan\Rules\Comparison\UsageOfVoidMatchExpressionRule
+	- PHPStan\Rules\Constants\ValueAssignedToClassConstantRule
+	- PHPStan\Rules\Functions\IncompatibleDefaultParameterTypeRule
+	- PHPStan\Rules\Generics\ClassAncestorsRule
+	- PHPStan\Rules\Generics\ClassTemplateTypeRule
+	- PHPStan\Rules\Generics\EnumAncestorsRule
+	- PHPStan\Rules\Generics\EnumTemplateTypeRule
+	- PHPStan\Rules\Generics\FunctionTemplateTypeRule
+	- PHPStan\Rules\Generics\FunctionSignatureVarianceRule
+	- PHPStan\Rules\Generics\InterfaceAncestorsRule
+	- PHPStan\Rules\Generics\InterfaceTemplateTypeRule
+	- PHPStan\Rules\Generics\MethodTemplateTypeRule
+	- PHPStan\Rules\Generics\MethodTagTemplateTypeRule
+	- PHPStan\Rules\Generics\MethodSignatureVarianceRule
+	- PHPStan\Rules\Generics\TraitTemplateTypeRule
+	- PHPStan\Rules\Generics\UsedTraitsRule
+	- PHPStan\Rules\Methods\CallPrivateMethodThroughStaticRule
+	- PHPStan\Rules\Methods\IncompatibleDefaultParameterTypeRule
+	- PHPStan\Rules\Operators\InvalidComparisonOperationRule
+	- PHPStan\Rules\PhpDoc\FunctionConditionalReturnTypeRule
+	- PHPStan\Rules\PhpDoc\MethodConditionalReturnTypeRule
+	- PHPStan\Rules\PhpDoc\FunctionAssertRule
+	- PHPStan\Rules\PhpDoc\MethodAssertRule
+	- PHPStan\Rules\PhpDoc\IncompatibleSelfOutTypeRule
+	- PHPStan\Rules\PhpDoc\IncompatibleClassConstantPhpDocTypeRule
+	- PHPStan\Rules\PhpDoc\IncompatiblePhpDocTypeRule
+	- PHPStan\Rules\PhpDoc\IncompatiblePropertyPhpDocTypeRule
+	- PHPStan\Rules\PhpDoc\InvalidThrowsPhpDocValueRule
+	- PHPStan\Rules\PhpDoc\IncompatibleParamImmediatelyInvokedCallableRule
+	- PHPStan\Rules\Properties\AccessPrivatePropertyThroughStaticRule
+	- PHPStan\Rules\Classes\RequireImplementsRule
+	- PHPStan\Rules\Classes\RequireExtendsRule
+	- PHPStan\Rules\PhpDoc\RequireImplementsDefinitionClassRule
+	- PHPStan\Rules\PhpDoc\RequireExtendsDefinitionClassRule
+	- PHPStan\Rules\PhpDoc\RequireExtendsDefinitionTraitRule
+
+conditionalTags:
+	PHPStan\Rules\Classes\MethodTagRule:
+		phpstan.rules.rule: %featureToggles.absentTypeChecks%
+
+	PHPStan\Rules\Classes\MethodTagTraitRule:
+		phpstan.rules.rule: %featureToggles.absentTypeChecks%
+
+	PHPStan\Rules\Classes\MethodTagTraitUseRule:
+		phpstan.rules.rule: %featureToggles.absentTypeChecks%
+
+	PHPStan\Rules\Classes\MixinTraitRule:
+		phpstan.rules.rule: %featureToggles.absentTypeChecks%
+
+	PHPStan\Rules\Classes\MixinTraitUseRule:
+		phpstan.rules.rule: %featureToggles.absentTypeChecks%
+
+	PHPStan\Rules\Classes\PropertyTagRule:
+		phpstan.rules.rule: %featureToggles.absentTypeChecks%
+
+	PHPStan\Rules\Classes\PropertyTagTraitRule:
+		phpstan.rules.rule: %featureToggles.absentTypeChecks%
+
+	PHPStan\Rules\Classes\PropertyTagTraitUseRule:
+		phpstan.rules.rule: %featureToggles.absentTypeChecks%
+
+	PHPStan\Rules\Functions\IncompatibleArrowFunctionDefaultParameterTypeRule:
+		phpstan.rules.rule: %featureToggles.closureDefaultParameterTypeRule%
+
+	PHPStan\Rules\Functions\IncompatibleClosureDefaultParameterTypeRule:
+		phpstan.rules.rule: %featureToggles.closureDefaultParameterTypeRule%
+
+	PHPStan\Rules\Generics\MethodTagTemplateTypeTraitRule:
+		phpstan.rules.rule: %featureToggles.absentTypeChecks%
+
+	PHPStan\Rules\Methods\IllegalConstructorMethodCallRule:
+		phpstan.rules.rule: %featureToggles.illegalConstructorMethodCall%
+
+	PHPStan\Rules\Methods\IllegalConstructorStaticCallRule:
+		phpstan.rules.rule: %featureToggles.illegalConstructorMethodCall%
+
+	PHPStan\Rules\PhpDoc\VarTagChangedExpressionTypeRule:
+		phpstan.rules.rule: %featureToggles.varTagType%
+
+	PHPStan\Rules\Generics\PropertyVarianceRule:
+		phpstan.rules.rule: %featureToggles.propertyVariance%
+
+	PHPStan\Rules\Pure\PureFunctionRule:
+		phpstan.rules.rule: %featureToggles.pure%
+
+	PHPStan\Rules\Pure\PureMethodRule:
+		phpstan.rules.rule: %featureToggles.pure%
+
+services:
+	-
+		class: PHPStan\Rules\Classes\MixinRule
+		tags:
+			- phpstan.rules.rule
+
+	-
+		class: PHPStan\Rules\Classes\MixinTraitRule
+
+	-
+		class: PHPStan\Rules\Classes\MixinTraitUseRule
+
+	-
+		class: PHPStan\Rules\Classes\MethodTagRule
+
+	-
+		class: PHPStan\Rules\Classes\MethodTagTraitRule
+
+	-
+		class: PHPStan\Rules\Classes\MethodTagTraitUseRule
+
+	-
+		class: PHPStan\Rules\Classes\PropertyTagRule
+
+	-
+		class: PHPStan\Rules\Classes\PropertyTagTraitRule
+
+	-
+		class: PHPStan\Rules\Classes\PropertyTagTraitUseRule
+
+	-
+		class: PHPStan\Rules\PhpDoc\RequireExtendsCheck
+		arguments:
+			checkClassCaseSensitivity: %checkClassCaseSensitivity%
+
+	-
+		class: PHPStan\Rules\PhpDoc\RequireImplementsDefinitionTraitRule
+		arguments:
+			checkClassCaseSensitivity: %checkClassCaseSensitivity%
+
+		tags:
+			- phpstan.rules.rule
+
+	-
+		class: PHPStan\Rules\Functions\IncompatibleArrowFunctionDefaultParameterTypeRule
+
+	-
+		class: PHPStan\Rules\Functions\IncompatibleClosureDefaultParameterTypeRule
+
+	-
+		class: PHPStan\Rules\Functions\CallCallablesRule
+		arguments:
+			reportMaybes: %reportMaybes%
+
+		tags:
+			- phpstan.rules.rule
+
+	-
+		class: PHPStan\Rules\Generics\MethodTagTemplateTypeTraitRule
+
+	-
+		class: PHPStan\Rules\Methods\IllegalConstructorMethodCallRule
+
+	-
+		class: PHPStan\Rules\Methods\IllegalConstructorStaticCallRule
+
+	-
+		class: PHPStan\Rules\PhpDoc\InvalidPhpDocTagValueRule
+		arguments:
+			checkAllInvalidPhpDocs: %featureToggles.allInvalidPhpDocs%
+			invalidPhpDocTagLine: %featureToggles.invalidPhpDocTagLine%
+
+		tags:
+			- phpstan.rules.rule
+
+	-
+		class: PHPStan\Rules\PhpDoc\InvalidPhpDocVarTagTypeRule
+		arguments:
+			checkClassCaseSensitivity: %checkClassCaseSensitivity%
+			checkMissingVarTagTypehint: %checkMissingVarTagTypehint%
+
+		tags:
+			- phpstan.rules.rule
+
+	-
+		class: PHPStan\Rules\PhpDoc\InvalidPHPStanDocTagRule
+		arguments:
+			checkAllInvalidPhpDocs: %featureToggles.allInvalidPhpDocs%
+
+		tags:
+			- phpstan.rules.rule
+
+	-
+		class: PHPStan\Rules\PhpDoc\VarTagChangedExpressionTypeRule
+
+	-
+		class: PHPStan\Rules\PhpDoc\WrongVariableNameInVarTagRule
+		arguments:
+			checkTypeAgainstNativeType: %featureToggles.varTagType%
+
+		tags:
+			- phpstan.rules.rule
+
+	-
+		class: PHPStan\Rules\Generics\PropertyVarianceRule
+		arguments:
+			readOnlyByPhpDoc: %featureToggles.readOnlyByPhpDoc%
+
+	-
+		class: PHPStan\Rules\Pure\PureFunctionRule
+
+	-
+		class: PHPStan\Rules\Pure\PureMethodRule
+
+	-
+		class: PHPStan\Rules\Operators\InvalidBinaryOperationRule
+		arguments:
+			bleedingEdge: %featureToggles.bleedingEdge%
+
+		tags:
+			- phpstan.rules.rule
+
+	-
+		class: PHPStan\Rules\Operators\InvalidUnaryOperationRule
+		arguments:
+			bleedingEdge: %featureToggles.bleedingEdge%
+
+		tags:
+			- phpstan.rules.rule
+
